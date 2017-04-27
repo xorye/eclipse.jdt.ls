@@ -75,6 +75,7 @@ import org.eclipse.jdt.ls.core.internal.preferences.Preferences;
 import org.eclipse.lsp4j.CodeAction;
 import org.eclipse.lsp4j.CodeActionKind;
 import org.eclipse.lsp4j.CodeActionOptions;
+import org.eclipse.jdt.ls.core.internal.telemetry.TelemetryEventFactory;
 import org.eclipse.lsp4j.CodeActionParams;
 import org.eclipse.lsp4j.CodeLens;
 import org.eclipse.lsp4j.CodeLensOptions;
@@ -206,6 +207,7 @@ public class JDTLanguageServer implements LanguageServer, TextDocumentService, W
 	@Override
 	public void initialized(InitializedParams params) {
 		logInfo(">> initialized");
+		client.sendTelemetryEvent(TelemetryEventFactory.createStartupEvent());
 		try {
 			Job.getJobManager().join(InitHandler.JAVA_LS_INITIALIZATION_JOBS, null);
 		} catch (OperationCanceledException | InterruptedException e) {

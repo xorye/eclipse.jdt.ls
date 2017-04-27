@@ -85,6 +85,7 @@ import org.eclipse.jdt.ls.core.internal.handlers.InitHandler;
 import org.eclipse.jdt.ls.core.internal.preferences.PreferenceManager;
 import org.eclipse.jdt.ls.core.internal.preferences.Preferences;
 import org.eclipse.jdt.ls.core.internal.preferences.Preferences.FeatureStatus;
+import org.eclipse.jdt.ls.core.internal.telemetry.TelemetryEventFactory;
 import org.eclipse.lsp4j.Command;
 import org.eclipse.lsp4j.DidChangeWatchedFilesRegistrationOptions;
 import org.eclipse.lsp4j.FileSystemWatcher;

@@ -126,4 +126,9 @@ public class EclipseProjectImporter extends AbstractProjectImporter {
 		return project;
 	}
 
+	@Override
+	public String toString() {
+		return "Eclipse import";
+	}
+
 }

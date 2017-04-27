@@ -19,6 +19,7 @@ import java.util.concurrent.TimeoutException;
 
 import org.eclipse.jdt.ls.core.internal.handlers.LogHandler;
 import org.eclipse.jdt.ls.core.internal.lsp.ExecuteCommandProposedClient;
+import org.eclipse.jdt.ls.core.internal.telemetry.TelemetryEvent;
 import org.eclipse.lsp4j.ApplyWorkspaceEditParams;
 import org.eclipse.lsp4j.ApplyWorkspaceEditResponse;
 import org.eclipse.lsp4j.Command;
@@ -207,6 +208,10 @@ public class JavaClientConnection {
 		if (logHandler != null) {
 			logHandler.uninstall();
 		}
+	}
+
+	public void sendTelemetryEvent(TelemetryEvent event) {
+		client.telemetryEvent(event);
 	}
 
 }
